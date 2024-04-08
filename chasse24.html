@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chasse au trésor</title>
+    <meta charset="utf-8">
+    <style>
+        #hidden-div {
+            display: none;
+        }
+    </style>
+
+    <link rel="stylesheet" href="chasse.css">
+
+</head>
+<body>
+<h1>Bienvenue sur la chasse au trésor!</h1>
+<br>
+
+
+<p>   Pour me trouver le plaisir est une étape fondamental par laquelle il faut passer pour me faire m’ouvrir  </p>
+
+
+<p class="warning">ATTENTION CLIQUE ICI QU'UNE FOIS QUE LE MAITRE DU JEU TE LE DIT OU QUE TU AS TROUVÉ LE CHOCOLAT EN QUESTION </p>
+<a id="link" href="chasse24bis.html" style="display: none;">Passer a la suite</a>
+<div id="chrono">
+    <h2>Chronomètre</h2>
+    <p id="timer">04:00</p>
+    <button onclick="startTimer()">Départ</button>
+    <button id="stopButton" onclick="stopTimer()" disabled>Arrêter</button>
+    <button id="resetButton" onclick="resetTimer()" disabled>Recommencer</button>
+</div>
+
+<script>
+    var timerInterval;
+    var totalTime = 240; // 4 minutes en secondes
+    var timeLeft = totalTime;
+    var timerRunning = false;
+
+    function startTimer() {
+        if (!timerRunning) {
+            timerInterval = setInterval(updateTimer, 1000);
+            timerRunning = true;
+            document.getElementById('stopButton').removeAttribute('disabled');
+            document.getElementById('resetButton').removeAttribute('disabled');
+        }
+    }
+
+    function stopTimer() {
+        clearInterval(timerInterval);
+        timerRunning = false;
+    }
+
+    function resetTimer() {
+        clearInterval(timerInterval);
+        timerRunning = false;
+        timeLeft = totalTime;
+        updateTimerDisplay();
+        document.getElementById('stopButton').setAttribute('disabled', true);
+        document.getElementById('resetButton').setAttribute('disabled', true);
+        document.getElementById('link').setAttribute('href', 'chasse24bis.html');
+        document.getElementById('link').setAttribute('disabled', true);
+    }
+
+    function updateTimer() {
+        timeLeft--;
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            timerRunning = false;
+           
+            document.getElementById('stopButton').setAttribute('disabled', true);
+            document.getElementById('resetButton').setAttribute('disabled', true);
+            document.getElementById('link').style.display = 'inline'; // Rendre visible le lien
+        }
+        updateTimerDisplay();
+    }
+
+    function updateTimerDisplay() {
+        var minutes = Math.floor(timeLeft / 60);
+        var seconds = timeLeft % 60;
+        var formattedTime = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        document.getElementById("timer").textContent = formattedTime;
+    }
+</script>
+
+
+</body>
+</html>

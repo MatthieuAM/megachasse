@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chasse au trésor</title>
+	<meta charset="utf-8">
+	<style>
+		#hidden-div {
+			display: none;
+		}
+	</style>
+
+
+<style>
+	.button {
+		display: inline-block;
+		background-color: #007bff;
+		color: white;
+		border-radius: 30px;
+		padding: 10px 20px;
+		font-size: 20px;
+		font-weight: bold;
+		text-align: center;
+		cursor: pointer;
+		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+		transition: all 0.3s ease-in-out;
+		height: 100px;
+	width: 400px;
+	}
+
+	.button:hover {
+		background-color: #0062cc;
+		box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+		transform: translateY(-2px);
+		
+	}
+
+	.hidden-div {
+		display: none;
+		background-color: lightblue;
+		padding: 20px;
+		margin-top: 20px;
+		text-align: center;
+		font-size: 24px;
+		font-weight: bold;
+	}
+
+	.augm{
+
+font-size: 20px;
+color: red;
+
+		}
+</style>
+<link rel="stylesheet" href="chasse.css">
+
+</head>
+<body>
+	<h1>Bienvenue sur la chasse au trésor!</h1>
+	<p>Felicitation tu es arrivé jusqu'ici <br>
+	
+		<p>Je m’étend et me détente trop souvent. <br> Où suis-je ? </p>	
+	</p>
+
+
+
+
+	 
+
+
+
+
+<p class="warning">ATTENTION CLIQUE ICI QU'UNE FOIS QUE LE MAITRE DU JEU TE LE DIT OU QUE TU AS TROUVÉ LE CHOCOLAT EN QUESTION </p>
+	<a href="chasse9.html">Passer a la suite</a>
+
+	<script>
+		function checkCode() {
+			var inputCode = document.getElementById("code").value;
+			if (inputCode === "326") {
+				document.getElementById("hidden-div").style.display = "block";
+			} else {
+				alert("Code incorrect, veuillez réessayer.");
+			}
+		}
+	</script>
+
+
+<script>
+	function showDiv() {
+		var div = document.getElementById("hidden-div");
+		if (div.style.display === "none") {
+			div.style.display = "block";
+		} else {
+			div.style.display = "none";
+		}
+	}
+</script>
+</body>
+</html>

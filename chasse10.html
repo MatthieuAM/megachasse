@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Chasse au trésor</title>
+	<meta charset="utf-8">
+	<style>
+		#hidden-div {
+			display: none;
+		}
+	</style>
+
+	<link rel="stylesheet" href="chasse.css">
+
+</head>
+
+<body>
+	<h1>Bienvenue sur la chasse au trésor!</h1>
+	<p>Felicitation tu es arrivé jusqu'ici <br>
+
+		<p> Tout de miroir vertu je me porte comme un charme tout en étant vide</p>
+
+	
+	</p>
+
+
+
+
+
+	<!-- <h1>Minuteur</h1>
+	<label for="minutes">Minutes:</label>
+	<input type="number" id="minutes" min="0" max="60" value="0">
+	<label for="seconds">Secondes:</label>
+	<input type="number" id="seconds" min="0" max="60" value="0">
+	<button onclick="startTimer()">Démarrer</button>
+	<button onclick="stopTimer()">Arrêter</button>
+	<button onclick="resetTimer()">Réinitialiser</button>
+	<div id="timer">00:30</div>
+
+	<h1>Minuteur de 60 secondes avec div à la fin</h1>
+	<button onclick="startTimer()">Démarrer</button>
+	<button onclick="stopTimer()">Arrêter</button>
+	<button onclick="resetTimer()">Réinitialiser</button>
+	<div id="timer">01:00</div>
+	<div id="end-message">Le trésor se trouve dans le casier des t-shirts du coté de ton homme</div>
+ -->
+
+
+	<p class="warning">ATTENTION CLIQUE ICI QU'UNE FOIS QUE LE MAITRE DU JEU TE LE DIT OU QUE TU AS TROUVÉ LE CHOCOLAT
+		EN QUESTION </p>
+	<a href="chasse10-2.html">Passer a la suite</a>
+
+	<script>
+		function checkCode() {
+			var inputCode = document.getElementById("code").value;
+			if (inputCode === "326") {
+				document.getElementById("hidden-div").style.display = "block";
+			} else {
+				alert("Code incorrect, veuillez réessayer.");
+			}
+		}
+	</script>
+
+
+
+<script>
+	var seconds = 60;
+	var timer;
+	var endMessage = document.getElementById("end-message");
+
+	function addLeadingZero(num) {
+		return (num < 10) ? "0" + num : num;
+	}
+
+	function startTimer() {
+		timer = setInterval(function() {
+			seconds--;
+			if (seconds == 0) {
+				clearInterval(timer);
+				showEndMessage();
+			}
+			var timeString = "00:" + addLeadingZero(seconds);
+			document.getElementById("timer").innerHTML = timeString;
+		}, 1000);
+	}
+
+	function stopTimer() {
+		clearInterval(timer);
+	}
+
+	function resetTimer() {
+		clearInterval(timer);
+		seconds = 60;
+		document.getElementById("timer").innerHTML = "01:00";
+		endMessage.style.display = "none";
+	}
+
+	function showEndMessage() {
+		endMessage.style.display = "block";
+	}
+</script>
+
+	
+</body>
+</html>

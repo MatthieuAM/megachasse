@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chasse au trésor</title>
+	<meta charset="utf-8">
+	<style>
+		#hidden-div {
+			display: none;
+		}
+	</style>
+
+<link rel="stylesheet" href="chasse.css">
+
+</head>
+<body>
+	<h1>Bienvenue sur la chasse au trésor!</h1>
+	<p>Felicitation tu es arrivé jusqu'ici <br>
+	
+		<p>Je me trouve dans un endroit tres sombre oublié de tous mais j’aurai un jour une tres grande importance. <br>  Qui suis-je ?</p>	
+	</p>
+
+
+<p class="warning">ATTENTION CLIQUE ICI QU'UNE FOIS QUE LE MAITRE DU JEU TE LE DIT OU QUE TU AS TROUVÉ LE CHOCOLAT EN QUESTION </p>
+	<a href="chasse6.html">Passer a la suite</a>
+
+	<script>
+		function checkCode() {
+			var inputCode = document.getElementById("code").value;
+			if (inputCode === "326") {
+				document.getElementById("hidden-div").style.display = "block";
+			} else {
+				alert("Code incorrect, veuillez réessayer.");
+			}
+		}
+	</script>
+</body>
+</html>

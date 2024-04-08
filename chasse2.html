@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chasse au trésor</title>
+	<meta charset="utf-8">
+	<style>
+		#hidden-div {
+			display: none;
+		}
+	</style>
+
+<link rel="stylesheet" href="chasse.css">
+
+</head>
+<body>
+	<h1>Bienvenue sur la Méga chasse au trésor!</h1>  
+	<p>Je suis un objet magique qui a été acheté mais pas terminé
+	</p>
+	
+	
+        </p>
+
+		<a href="chasse3.html">Passer a la suite</a>
+
+		<!-- Ajoutez ici les énigmes ou in
+			dices pour la chasse au trésor -->
+
+	<script>
+		function checkCode() {
+			var inputCode = document.getElementById("code").value;
+			if (inputCode === "222") {
+				document.getElementById("hidden-div").style.display = "block";
+			} else {
+				alert("Code incorrect, veuillez réessayer.");
+			}
+		}
+	</script>
+</body>
+</html>

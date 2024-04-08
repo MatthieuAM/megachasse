@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chasse au trésor</title>
+	<meta charset="utf-8">
+	<style>
+		#hidden-div {
+			display: none;
+		}
+	</style>
+
+<link rel="stylesheet" href="chasse.css">
+
+</head>
+<body>
+	<h1>Bienvenue sur la chasse au trésor!</h1>
+	<p>Pour accéder à la page de la chasse au trésor, veuillez entrer le code d'accès:</p>
+	<form>
+		<label class="taille-form" for="code">Code d'accès:</label>
+		<input class="taille-form" type="text" id="code" name="code" required>
+		<button class="taille-form" type="button" onclick="checkCode()">Entrer</button>
+	</form>
+	<div id="hidden-div">
+		<p>Félicitations, vous avez trouvé le trésor! <br>
+Ton trésor se trouve dans la boite de porte coter conducteur 
+<br><br><br>
+<a href="chasse4.html">Passer a la suite</a>
+        </p>
+		<!-- Ajoutez ici les énigmes ou indices pour la chasse au trésor -->
+	</div>
+
+<p>Mon premier est un chiffre impaire proche de zero qui le depasse sans passer en dessous de lui </p>
+<br>
+<p>Mon deuxieme est un chiffre paire ce que actuellement mario aura surement au cinema</p>
+<br>
+<p>Mon troisieme est un chiffre paire qui peut se retourner et avoir aussi une signification  </p>
+
+
+	<script>
+		function checkCode() {
+			var inputCode = document.getElementById("code").value;
+			if (inputCode === "326") {
+				document.getElementById("hidden-div").style.display = "block";
+			} else {
+				alert("Code incorrect, veuillez réessayer.");
+			}
+		}
+	</script>
+</body>
+</html>

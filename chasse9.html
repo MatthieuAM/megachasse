@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Chasse au trésor</title>
+	<meta charset="utf-8">
+	<style>
+		#hidden-div {
+			display: none;
+		}
+
+		button{
+
+height: 50px;
+width: 150px;
+font-size: 22px;		
+}
+
+
+	</style>
+
+	<link rel="stylesheet" href="chasse.css">
+
+</head>
+
+<body>
+	<h1>Bienvenue sur la chasse au trésor!</h1>
+	<p>Felicitation tu es arrivé jusqu'ici <br>
+
+		<p> 	J’aime beaucoup jouer sans ecran, et on ne m’a pas sorti depuis longtemps</p>
+	</p>
+
+
+
+
+
+	<!-- <h1>Minuteur</h1>
+	<label for="minutes">Minutes:</label>
+	<input type="number" id="minutes" min="0" max="60" value="0">
+	<label for="seconds">Secondes:</label>
+	<input type="number" id="seconds" min="0" max="60" value="0">
+	<button onclick="startTimer()">Démarrer</button>
+	<button onclick="stopTimer()">Arrêter</button>
+	<button onclick="resetTimer()">Réinitialiser</button>
+	<div id="timer">00:30</div> 
+
+	<h1>Minuteur de 30 secondes</h1>
+	<button onclick="startTimer()">Démarrer</button>
+	<button onclick="stopTimer()">Arrêter</button>
+	<button onclick="resetTimer()">Réinitialiser</button>
+	<div id="timer">00:30</div>
+	<div id="fin">Le trésor se trouve dans le lit </div>
+
+
+-->
+
+
+	<p class="warning">ATTENTION CLIQUE ICI QU'UNE FOIS QUE LE MAITRE DU JEU TE LE DIT OU QUE TU AS TROUVÉ LE CHOCOLAT
+		EN QUESTION </p>
+	<a href="chasse10.html">Passer a la suite</a>
+
+	<script>
+		function checkCode() {
+			var inputCode = document.getElementById("code").value;
+			if (inputCode === "326") {
+				document.getElementById("hidden-div").style.display = "block";
+			} else {
+				alert("Code incorrect, veuillez réessayer.");
+			}
+		}
+	</script>
+</body>
+<script src="chasse.js"></script>
+</html>
