@@ -1,37 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Chasse au trésor</title>
-	<meta charset="utf-8">
-	<style>
-		#hidden-div {
-			display: none;
-		}
-	</style>
+    <title>Chasse au trésor</title>
+    <meta charset="utf-8">
+    <style>
+        main {
+            display: none;
+        }
+    </style>
 
-<link rel="stylesheet" href="chasse.css">
+    <link rel="stylesheet" href="chasse.css">
 
 </head>
 <body>
-	<h1>Bienvenue sur la chasse au trésor!</h1>
-	<p>Felicitation tu es arrivé jusqu'ici <br>
-	
-		<p> Je suis un objet qui fonctionne depuis très longtemps même si pas à 100% de mes possibilité, je crache des choses que les gens aimes. <br> Qui suis-je ? </p>	
-	</p>
+<main>
+    <h1>Bienvenue sur la chasse au trésor!</h1>
+    <p>Félicitations, tu es arrivé jusqu'ici!<br>
+        <p>Je suis un objet qui fonctionne depuis très longtemps même si pas à 100% de mes possibilités, je crache des choses que les gens aiment.<br>Qui suis-je ?</p>
+    </p>
 
+    <p class="warning">ATTENTION CLIQUE ICI QU'UNE FOIS QUE LE MAITRE DU JEU TE LE DIT OU QUE TU AS TROUVÉ LE CHOCOLAT EN QUESTION</p>
+    <a href="chasse8.html">Passer à la suite</a>
+</main>
 
-<p class="warning">ATTENTION CLIQUE ICI QU'UNE FOIS QUE LE MAITRE DU JEU TE LE DIT OU QUE TU AS TROUVÉ LE CHOCOLAT EN QUESTION </p>
-	<a href="chasse8.html">Passer a la suite</a>
+<p class="reprise">Reprise à 14h30, Bonne appetit !</p>
 
-	<script>
-		function checkCode() {
-			var inputCode = document.getElementById("code").value;
-			if (inputCode === "326") {
-				document.getElementById("hidden-div").style.display = "block";
-			} else {
-				alert("Code incorrect, veuillez réessayer.");
-			}
-		}
-	</script>
+<script>
+    // Fonction pour faire réapparaître le contenu à 14h30
+    function showContent() {
+        document.main.style.display = "block";
+    }
+
+    // Fonction pour masquer la classe reprise à 14h30
+    function hideReprise() {
+        document.querySelector(".reprise").style.display = "none";
+    }
+
+    // Récupérer l'heure actuelle
+    var now = new Date();
+    var currentHour = now.getHours();
+    var currentMinutes = now.getMinutes();
+
+    // Calculer le nombre de minutes restantes jusqu'à 14h30
+    var remainingMinutes = (14 - currentHour - 1) * 60 + (30 - currentMinutes);
+
+    // Planifier l'affichage du contenu à 14h30
+    setTimeout(function() {
+        showContent();
+        hideReprise();
+    }, remainingMinutes * 60 * 1000);
+</script>
 </body>
 </html>
