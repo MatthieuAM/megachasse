@@ -23,16 +23,12 @@
     <a href="chasse8.html">Passer à la suite</a>
 </main>
 
-<p class="reprise">Reprise à 14h30, Bonne appetit !</p>
+<p class="reprise">Reprise à 14h30, Bon appétit !</p>
 
 <script>
     // Fonction pour faire réapparaître le contenu à 14h30
     function showContent() {
-        document.main.style.display = "block";
-    }
-
-    // Fonction pour masquer la classe reprise à 14h30
-    function hideReprise() {
+        document.querySelector("main").style.display = "block";
         document.querySelector(".reprise").style.display = "none";
     }
 
@@ -40,15 +36,14 @@
     var now = new Date();
     var currentHour = now.getHours();
     var currentMinutes = now.getMinutes();
+    var currentSeconds = now.getSeconds();
+    var currentMilliseconds = now.getMilliseconds();
 
-    // Calculer le nombre de minutes restantes jusqu'à 14h30
-    var remainingMinutes = (14 - currentHour - 1) * 60 + (30 - currentMinutes);
+    // Calculer le nombre de millisecondes restantes jusqu'à 14h30
+    var remainingMilliseconds = ((14 * 60 + 30) * 60 * 1000) - ((currentHour * 60 + currentMinutes) * 60 * 1000 + currentSeconds * 1000 + currentMilliseconds);
 
     // Planifier l'affichage du contenu à 14h30
-    setTimeout(function() {
-        showContent();
-        hideReprise();
-    }, remainingMinutes * 60 * 1000);
+    setTimeout(showContent, remainingMilliseconds);
 </script>
 </body>
 </html>
